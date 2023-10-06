@@ -1,0 +1,41 @@
+@use 'sass:map';
+
+$breakpoint-sizes: (
+  'xsmall': 0,
+  'small': 375,
+  'medium': 475,
+  'large': 980,
+  'xlarge': 1600,
+  'xxlarge': 1920,
+  'xxxlarge': 2600,
+);
+
+$design-checkpoint-sizes: (
+  'xsmall': 320,
+  'small': 375,
+  'medium': 768,
+  'large': 1440,
+  'xlarge': 1600,
+  'xxlarge': 1920,
+  'xxxlarge': 2600,
+);
+
+$container-padding-sizes: (
+  'xsmall': 12,
+  'small': 12,
+  'medium': 24,
+  'large': 165,
+  'xlarge': 245,
+  'xxlarge': 405,
+  'xxxlarge': 745,
+);
+
+$container-sizes: (
+  'xsmall': 320,
+  'small': 375,
+  'medium': 768,
+  'large': map.get($design-checkpoint-sizes, 'large') - map.get($container-padding-sizes, 'large') * 2,
+  'xlarge': map.get($design-checkpoint-sizes, 'xlarge') - map.get($container-padding-sizes, 'xlarge') * 2,
+  'xxlarge': map.get($design-checkpoint-sizes, 'xxlarge') - map.get($container-padding-sizes, 'xxlarge') * 2,
+  'xxxlarge': map.get($design-checkpoint-sizes, 'xxxlarge') - map.get($container-padding-sizes, 'xxxlarge') * 2,
+);

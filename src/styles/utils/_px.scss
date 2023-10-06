@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@import '../variables/breakpoints';
+
+@function px($value, $size) {
+  @return math.div(100vw, map.get($design-checkpoint-sizes, $size)) * $value;
+}

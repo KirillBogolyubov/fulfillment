@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@import 'px';
+
+@function container-padding-size($size) {
+  @return px(map-get($container-padding-sizes, $size), $size);
+}

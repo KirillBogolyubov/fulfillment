@@ -1,0 +1,16 @@
+@import '../settings';
+@import '../utils';
+
+.anchor {
+  position: relative;
+  top: px(-115, xsmall);
+}
+
+@each $name, $size in $breakpoint-sizes {
+  @include breakpoint(#{$name}) {
+    .anchor {
+      position: relative;
+      top: px(-115, $name);
+    }
+  }
+}

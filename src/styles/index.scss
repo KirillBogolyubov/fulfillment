@@ -1,0 +1,40 @@
+@import 'settings';
+@import 'fonts';
+@import 'grids/container';
+@import 'grids/padding';
+@import 'grids/triple';
+@import 'grids/wide';
+@import 'participient/anchor';
+@import 'participient/button';
+@import 'participient/header-1';
+@import 'participient/header-2';
+@import 'participient/header-3';
+@import 'participient/header-4';
+@import 'participient/paragraph';
+@import 'participient/rotate-card';
+
+* {
+  font-family: 'Rosatom', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.highlight {
+  background-color: rgba(green, 0.1) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: $color-black;
+  }
+
+  img {
+    filter: brightness(.8) contrast(1.2);
+  }
+}

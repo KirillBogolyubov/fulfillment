@@ -1,0 +1,15 @@
+@import '../settings';
+@import '../utils';
+
+.container-grid {
+  margin: auto;
+  width: 100%;
+}
+
+@each $name, $size in $breakpoint-sizes {
+  @include breakpoint(#{$name}) {
+    .container-grid {
+      width: container-size($name);
+    }
+  }
+}

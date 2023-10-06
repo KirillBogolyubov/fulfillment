@@ -1,0 +1,57 @@
+---
+include:
+  - project: "devops/gitlab/gitlab-pipeline-includes"
+    ref: "main"
+    file: "rules.yml"
+
+stages:
+  - converge
+  - cleanup
+
+before_script:
+  - type werf && source $(werf ci-env gitlab --as-file)
+
+.base: &base
+  stage: converge
+  image: hub.cifrum-digital.ru/werf-proxy/werf/werf
+  variables:
+    WERF_SYNCHRONIZATION: kubernetes://werf-synchronization
+    # WERF_KUBECONFIG_BASE64: $WERF_KUBECONFIG_BASE64
+    # WERF_IMAGES_REPO: $CI_REGISTRY_IMAGE
+    # WERF_LOG_VERBOSE: "True"
+  script:
+    - env
+    - werf converge
+      --set "ingress.hosts[0].host=$(echo ${CI_ENVIRONMENT_URL} | cut -d / -f 3)"
+      --set "ingress.hosts[0].paths[0].path=/"
+      --set "ingress.hosts[0].paths[0].pathType=Prefix"
+  tags:
+    - k8s
+
+converge:production:
+  extends:
+    - .base
+    - .rules-default-branch-manual
+  environment:
+    name: production
+    url: https://cifrum-website.k8s.cifrum.local
+
+converge:development:
+  extends:
+    - .base
+  environment:
+    name: development
+    url: https://dev-cifrum-website.k8s.cifrum.local
+  rules:
+    - if: $CI_COMMIT_BRANCH =~ "/^dev-.*$/" && $CI_PIPELINE_SOURCE == "push"
+
+cleanup:
+  stage: cleanup
+  image: hub.cifrum-digital.ru/werf-proxy/werf/werf
+  script:
+    - werf cr login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY_IMAGE
+    - werf cleanup
+  extends:
+    - .rules-default-branch
+  tags:
+    - k8s

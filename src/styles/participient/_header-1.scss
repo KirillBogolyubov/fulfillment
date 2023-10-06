@@ -1,0 +1,99 @@
+@import '../global';
+
+.header-1 {
+  color: $color-black;
+  font-weight: 700;
+  font-style: normal;
+  font-size: px(38, xsmall);
+  line-height: px(49, xsmall);
+  transition: color 0.3s ease-in-out;
+
+  &__small {
+    color: $color-gray;
+    font-size: px(18, xsmall);
+    line-height: px(23, xsmall);
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-1 {
+    color: $color-white;
+
+    &__small {
+      color: $color-gray;
+    }
+  }
+}
+
+@include breakpoint(small) {
+  .header-1 {
+    font-size: px(38, small);
+    line-height: px(49, small);
+
+    &__small {
+      font-size: px(18, small);
+      line-height: px(23, small);
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .header-1 {
+    font-size: px(46, medium);
+    line-height: px(60, medium);
+
+    &__small {
+      font-size: px(20, medium);
+      line-height: px(26, medium);
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .header-1 {
+    font-size: px(46, large);
+    line-height: px(60, large);
+
+    &__small {
+      font-size: px(20, large);
+      line-height: px(26, large);
+    }
+  }
+}
+
+@include breakpoint(xlarge) {
+  .header-1 {
+    font-size: px(46, xlarge);
+    line-height: px(60, xlarge);
+
+    &__small {
+      font-size: px(20, xlarge);
+      line-height: px(26, xlarge);
+    }
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .header-1 {
+    font-size: px(46, xxlarge);
+    line-height: px(60, xxlarge);
+
+    &__small {
+      font-size: px(20, xxlarge);
+      line-height: px(26, xxlarge);
+    }
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .header-1 {
+    font-size: px(46, xxlarge);
+    line-height: px(60, xxlarge);
+
+    &__small {
+      font-size: px(20, xxxlarge);
+      line-height: px(26, xxxlarge);
+    }
+  }
+}

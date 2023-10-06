@@ -1,0 +1,9 @@
+project: cifrum-website
+configVersion: 1
+deploy:
+  namespace: cifrum-website
+---
+image: frontend
+dockerfile: Dockerfile
+args: 
+  VITE_APP_HOST: "https://cifrum-digital.ru"

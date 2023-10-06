@@ -1,0 +1,67 @@
+@import '../global';
+
+.header-4 {
+  color: $color-black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: px(18, xsmall);
+  line-height: px(23, xsmall);
+  transition: color 0.3s ease-in-out;
+
+  &.secondary {
+    color: $color-gray;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-4 {
+    color: $color-white;
+
+    &.secondary {
+      color: $color-gray;
+    }
+  }
+}
+
+@include breakpoint(small) {
+  .header-4 {
+    font-size: px(18, xsmall);
+    line-height: px(23, xsmall);
+  }
+}
+
+@include breakpoint(medium) {
+  .header-4 {
+    font-size: px(20, medium);
+    line-height: px(26, medium);
+  }
+}
+
+@include breakpoint(large) {
+  .header-4 {
+    font-size: px(20, large);
+    line-height: px(26, large);
+  }
+}
+
+@include breakpoint(xlarge) {
+  .header-4 {
+    font-size: px(20, xlarge);
+    line-height: px(26, xlarge);
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .header-4 {
+    font-size: px(20, xxlarge);
+    line-height: px(26, xxlarge);
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .header-4 {
+    font-size: px(20, xxxlarge);
+    line-height: px(26, xxxlarge);
+  }
+}

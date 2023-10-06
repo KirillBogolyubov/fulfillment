@@ -1,0 +1,100 @@
+@import '../global';
+
+.button {
+  align-items: center;
+  background-color: $color-blue-alice;
+  border-radius: px(14, xsmall);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: px(14, xsmall);
+  justify-content: center;
+  line-height: px(24, xsmall);
+  min-height: px(40, xsmall);
+  padding: px(15, xsmall) px(15, xsmall);
+  text-decoration: none;
+  transition:
+    opacity 0.3s 0s ease-in-out,
+    color 0.3s 0s ease-in-out,
+    background-color 0.3s 0s ease-in-out;
+  width: fit-content;
+  white-space: nowrap;
+
+  &:not([disabled]):hover,
+  &:not([disabled]):active {
+    background-color: $color-blue-alice;
+    svg {
+      transition:
+        stroke 0.3s 0s ease-in-out;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@include breakpoint(small) {
+  .button {
+    border-radius: px(14, small);
+    font-size: px(14, small);
+    line-height: px(16, small);
+    min-height: px(40, small);
+    padding: px(15, small) px(15, small);
+  }
+}
+
+@include breakpoint(medium) {
+  .button {
+    border-radius: px(14, medium);
+    font-size: px(14, medium);
+    line-height: px(16, medium);
+    min-height: px(40, medium);
+    padding: px(15, medium) px(15, medium);
+  }
+}
+
+@include breakpoint(large) {
+  .button {
+    border-radius: px(14, large);
+    font-size: px(14, large);
+    line-height: px(16, large);
+    min-height: px(40, large);
+    padding: px(15, large) px(15, large);
+  }
+}
+
+@include breakpoint(xlarge) {
+  .button {
+    border-radius: px(14, xlarge);
+    font-size: px(14, xlarge);
+    line-height: px(16, xlarge);
+    min-height: px(40, xlarge);
+    padding: px(15, xlarge) px(15, xlarge);
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .button {
+    border-radius: px(14, xxlarge);
+    font-size: px(14, xxlarge);
+    line-height: px(16, xxlarge);
+    min-height: px(40, xxlarge);
+    padding: px(15, xxlarge) px(15, xxlarge);
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .button {
+    border-radius: px(14, xxxlarge);
+    font-size: px(14, xxxlarge);
+    line-height: px(16, xxxlarge);
+    min-height: px(40, xxxlarge);
+    padding: px(15, xxxlarge) px(15, xxxlarge);
+  }
+}

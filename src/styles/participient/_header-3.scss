@@ -1,0 +1,67 @@
+@import '../global';
+
+.header-3 {
+  color: $color-black;
+  font-style: normal;
+  font-weight: 700;
+  font-size: px(25, xsmall);
+  line-height: px(32, xsmall);
+  transition: color 0.3s ease-in-out;
+
+  &.secondary {
+    color: $color-white-super;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-3 {
+    color: $color-white;
+
+    &.secondary {
+      color: $color-black;
+    }
+  }
+}
+
+@include breakpoint(small) {
+  .header-3 {
+    font-size: px(25, small);
+    line-height: px(32, small);
+  }
+}
+
+@include breakpoint(medium) {
+  .header-3 {
+    font-size: px(30, medium);
+    line-height: px(39, medium);
+  }
+}
+
+@include breakpoint(large) {
+  .header-3 {
+    font-size: px(30, large);
+    line-height: px(39, large);
+  }
+}
+
+@include breakpoint(xlarge) {
+  .header-3 {
+    font-size: px(30, xlarge);
+    line-height: px(39, xlarge);
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .header-3 {
+    font-size: px(30, xxlarge);
+    line-height: px(39, xxlarge);
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .header-3 {
+    font-size: px(30, xxxlarge);
+    line-height: px(39, xxxlarge);
+  }
+}

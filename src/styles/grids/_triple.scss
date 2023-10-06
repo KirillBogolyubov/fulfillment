@@ -1,0 +1,55 @@
+@import '../settings';
+@import '../utils';
+
+.triple-grid {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: px(24, xsmall);
+  width: 100%;
+
+  &__item {
+    height: auto;
+  }
+}
+
+@include breakpoint(small) {
+  .triple-grid {
+    grid-gap: px(24, small);
+  }
+}
+
+@include breakpoint(medium) {
+  .triple-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: px(24, medium);
+  }
+}
+
+@include breakpoint(large) {
+  .triple-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: px(24, large);
+  }
+}
+
+@include breakpoint(xlarge) {
+  .triple-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: px(24, xlarge);
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .triple-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: px(24, xxlarge);
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .triple-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: px(24, xxxlarge);
+  }
+}

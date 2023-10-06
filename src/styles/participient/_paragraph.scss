@@ -1,0 +1,81 @@
+@import '../global';
+
+.paragraph {
+  color: $color-black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: px(14, xsmall);
+  line-height: px(18, xsmall);
+  transition: color 0.3s ease-in-out;
+
+  &.secondary {
+    color: $color-blue-alice;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.blue {
+    color: $color-blue;
+    transition: color 0.3s ease-in-out;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .paragraph {
+    color: $color-white;
+
+    &.secondary {
+      color: $color-blue-alice;
+    }
+
+    &.blue {
+      color: $color-blue;
+    }
+  }
+}
+
+@include breakpoint(small) {
+  .paragraph {
+    font-size: px(14, small);
+    line-height: px(18, small);
+  }
+}
+
+@include breakpoint(medium) {
+  .paragraph {
+    font-size: px(16, medium);
+    line-height: px(21, medium);
+  }
+}
+
+@include breakpoint(large) {
+  .paragraph {
+    font-size: px(16, large);
+    line-height: px(21, large);
+  }
+}
+
+@include breakpoint(xlarge) {
+  .paragraph {
+    font-size: px(16, xlarge);
+    line-height: px(21, xlarge);
+  }
+}
+
+@include breakpoint(xxlarge) {
+  .paragraph {
+    font-size: px(16, xxlarge);
+    line-height: px(21, xxlarge);
+  }
+}
+
+@include breakpoint(xxxlarge) {
+  .paragraph {
+    font-size: px(16, xxxlarge);
+    line-height: px(21, xxxlarge);
+  }
+}
+

@@ -1,0 +1,16 @@
+@import '../settings';
+@import '../utils';
+
+.padding-grid {
+  margin-top: px(64, xsmall);
+  margin-bottom: px(64, xsmall);
+}
+
+@each $name, $size in $breakpoint-sizes {
+  @include breakpoint(#{$name}) {
+    .padding-grid {
+      margin-top: px(64, $name);
+      margin-bottom: px(64, $name);
+    }
+  }
+}
